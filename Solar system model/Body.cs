@@ -1,6 +1,6 @@
 ﻿namespace Solar_system_model
 {
-    struct Vector3
+    public struct Vector3
     {
         public Vector3 (double x, double y, double z)
         {
@@ -11,9 +11,9 @@
         public double x, y, z;
     }
 
-    struct Body
+    public class Body
     {
-        public string name;
+        public string name = String.Empty;
 
         public Vector3 position;
         public Vector3 velocity;

@@ -8,14 +8,26 @@ namespace Solar_system_model
 {
     class Program
     {
+        static Data[] data;
         static Body[] bodies;
 
         static void Main()
         {
-            //Output.Print(bodies);
+            Initialize();
+        }
 
-            Data data = new Data();
-            
+        static void Initialize()
+        {
+            data = new[]
+            {
+                new Data("Sun"),
+                new Data("Mercury"),
+                new Data("Venus"),
+                new Data("Earth"),
+                new Data("Mars"),
+                new Data("Jupiter"),
+                new Data("Saturn")
+            };
         }
     }
 }
