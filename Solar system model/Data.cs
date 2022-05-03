@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace Solar_system_model
 {
@@ -21,7 +22,7 @@ namespace Solar_system_model
     {
         static string majorBodies = "";
 
-        public string mass;
+        public double mass;
         public string name;
         public State[] states;
 
@@ -37,10 +38,19 @@ namespace Solar_system_model
             if (index != null)
             {
                 string ephem = GetEPHEM(index);
+                string result = Regex.Match(ephem, @"(?<=\$\$SOE\n)(.|\n)*(?=\n\$\$EOE)").Value;
 
                 GetMass(ephem);
+                GetStates(result);
 
-                string vectors = Regex.Match(ephem, @"(?<=\$\$SOE\n)(.|\n)*(?=\n\$\$EOE)").Value;
+                Console.WriteLine(name + "\nMass: " + mass);
+                return;
+                for (int i = 0; i < states.Length; i++)
+                {
+                    
+                    State state = states[i];
+                    Console.WriteLine(state.time + " = A.D. " + state.date);
+                }
             }
         }
 
@@ -50,7 +60,12 @@ namespace Solar_system_model
             string exponent = Regex.Match(line, @"(?<=\^)\d* ").Value;
             string coefficient = Regex.Match(line, @"(?<=((= ~)|(=\s*)))\d*((\w|$)|(\.\d*))").Value;
 
-            Console.WriteLine(name + "\nMass: " + coefficient + "E" + exponent + "\n");
+            mass = Double.Parse(coefficient + "E" + exponent, NumberStyles.Float, CultureInfo.InvariantCulture);
+        }
+
+        void GetStates(string result)
+        {
+            foreach (var v in Regex.Matches(result, ".*?TDB.*\n.*\n.*")) Console.WriteLine(v);
         }
 
         string GetEPHEM(string i)
