@@ -8,21 +8,54 @@ using System.Text.RegularExpressions;
 
 namespace Solar_system_model
 {
+    public class State
+    {
+        public double time;
+        public string date;
+
+        public Vector3 position;
+        public Vector3 velocity;
+    }
+
     public class Data
     {
-        public Data()
+        static string majorBodies = "";
+
+        public string mass;
+        public string name;
+        public State[] states;
+
+        public Data(string name)
         {
-            data[0] = GetData(1);
+            if (majorBodies == "")
+            {
+                majorBodies = GetEPHEM("mb");
+            }
+
+            this.name = name;
+            string index = Regex.Match(majorBodies, @$"\d*(?=  {name}  )").Value;
+            if (index != null)
+            {
+                string ephem = GetEPHEM(index);
+
+                GetMass(ephem);
+
+                string vectors = Regex.Match(ephem, @"(?<=\$\$SOE\n)(.|\n)*(?=\n\$\$EOE)").Value;
+            }
         }
 
-        private string[] data = new[] { "" };
-
-        string GetData(int i)
+        void GetMass(string ephem)
         {
-            string get = Get($"https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND={i}&MAKE_EPHEM=YES&EPHEM_TYPE=VECTORS&CENTER=500@0");
-            string match = Regex.Match(get, @"(\$\$SOE)(.|\n)*(:?\$\$EOE)");
-            Console.Write(Regex.Match(match, @"X = \d*"));
-            return match.Substring(6, match.Length - 12);
+            string line = Regex.Match(ephem, "(?<= Mass(, | x)).*").Value;
+            string exponent = Regex.Match(line, @"(?<=\^)\d* ").Value;
+            string coefficient = Regex.Match(line, @"(?<=((= ~)|(=\s*)))\d*((\w|$)|(\.\d*))").Value;
+
+            Console.WriteLine(name + "\nMass: " + coefficient + "E" + exponent + "\n");
+        }
+
+        string GetEPHEM(string i)
+        {
+            return Get($"https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND={i}&MAKE_EPHEM=YES&EPHEM_TYPE=VECTORS&CENTER=500@0");
         }
         string Get(string uri)
         {

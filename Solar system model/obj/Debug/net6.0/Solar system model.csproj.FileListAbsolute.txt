@@ -13,3 +13,18 @@ C:\Users\karl2401\source\repos\Solar system model\Solar system model\obj\Debug\n
 C:\Users\karl2401\source\repos\Solar system model\Solar system model\obj\Debug\net6.0\ref\Solar system model.dll
 C:\Users\karl2401\source\repos\Solar system model\Solar system model\obj\Debug\net6.0\Solar system model.pdb
 C:\Users\karl2401\source\repos\Solar system model\Solar system model\obj\Debug\net6.0\Solar system model.genruntimeconfig.cache
+C:\Users\47452\source\repos\Solar-system\Solar system model\obj\Debug\net6.0\Solar system model.csproj.AssemblyReference.cache
+C:\Users\47452\source\repos\Solar-system\Solar system model\obj\Debug\net6.0\Solar system model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\47452\source\repos\Solar-system\Solar system model\obj\Debug\net6.0\Solar system model.AssemblyInfoInputs.cache
+C:\Users\47452\source\repos\Solar-system\Solar system model\obj\Debug\net6.0\Solar system model.AssemblyInfo.cs
+C:\Users\47452\source\repos\Solar-system\Solar system model\obj\Debug\net6.0\Solar system model.csproj.CoreCompileInputs.cache
+C:\Users\47452\source\repos\Solar-system\Solar system model\obj\Debug\net6.0\Solar system model.dll
+C:\Users\47452\source\repos\Solar-system\Solar system model\obj\Debug\net6.0\ref\Solar system model.dll
+C:\Users\47452\source\repos\Solar-system\Solar system model\obj\Debug\net6.0\Solar system model.pdb
+C:\Users\47452\source\repos\Solar-system\Solar system model\bin\Debug\net6.0\Solar system model.exe
+C:\Users\47452\source\repos\Solar-system\Solar system model\bin\Debug\net6.0\Solar system model.deps.json
+C:\Users\47452\source\repos\Solar-system\Solar system model\bin\Debug\net6.0\Solar system model.runtimeconfig.json
+C:\Users\47452\source\repos\Solar-system\Solar system model\bin\Debug\net6.0\Solar system model.dll
+C:\Users\47452\source\repos\Solar-system\Solar system model\bin\Debug\net6.0\ref\Solar system model.dll
+C:\Users\47452\source\repos\Solar-system\Solar system model\bin\Debug\net6.0\Solar system model.pdb
+C:\Users\47452\source\repos\Solar-system\Solar system model\obj\Debug\net6.0\Solar system model.genruntimeconfig.cache
