@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\karl2401\\source\\repos\\Solar system model\\Solar system model\\Solar system model.csproj": {}
+    "C:\\Users\\47452\\source\\repos\\Solar-system\\Solar system model\\Solar system model.csproj": {}
   },
   "projects": {
-    "C:\\Users\\karl2401\\source\\repos\\Solar system model\\Solar system model\\Solar system model.csproj": {
+    "C:\\Users\\47452\\source\\repos\\Solar-system\\Solar system model\\Solar system model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\karl2401\\source\\repos\\Solar system model\\Solar system model\\Solar system model.csproj",
+        "projectUniqueName": "C:\\Users\\47452\\source\\repos\\Solar-system\\Solar system model\\Solar system model.csproj",
         "projectName": "Solar system model",
-        "projectPath": "C:\\Users\\karl2401\\source\\repos\\Solar system model\\Solar system model\\Solar system model.csproj",
-        "packagesPath": "C:\\Users\\karl2401\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\karl2401\\source\\repos\\Solar system model\\Solar system model\\obj\\",
+        "projectPath": "C:\\Users\\47452\\source\\repos\\Solar-system\\Solar system model\\Solar system model.csproj",
+        "packagesPath": "C:\\Users\\47452\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\47452\\source\\repos\\Solar-system\\Solar system model\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\karl2401\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\47452\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -54,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

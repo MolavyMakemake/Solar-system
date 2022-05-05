@@ -29,6 +29,6 @@ namespace Solar_system_model
             }
         }
 
-        static string VectorToString(Vector3 v) => string.Format("{0}, {1}, {2}", v.x, v.y, v.z);
+        static public string VectorToString(Vector3 v) => string.Format("{0}, {1}, {2}", v.x, v.y, v.z);
     }
 }
