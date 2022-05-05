@@ -42,14 +42,14 @@ namespace Solar_system_model
 
                 GetMass(ephem);
                 GetStates(result);
-
                 Console.WriteLine(name + "\nMass: " + mass);
-                return;
                 for (int i = 0; i < states.Length; i++)
                 {
                     
                     State state = states[i];
                     Console.WriteLine(state.time + " = A.D. " + state.date);
+                    Console.WriteLine(Output.VectorToString(state.position));
+                    Console.WriteLine(Output.VectorToString(state.velocity));
                 }
             }
         }
@@ -65,7 +65,37 @@ namespace Solar_system_model
 
         void GetStates(string result)
         {
-            foreach (var v in Regex.Matches(result, ".*?TDB.*\n.*\n.*")) Console.WriteLine(v);
+            List<State> _states = new List<State>();
+            using (StringReader reader = new StringReader(result))
+            {
+                string timeData;
+                while ((timeData = reader.ReadLine()) != null)
+                {
+                    State state = new State
+                    {
+                        time = Convert.ToDouble(Regex.Match(timeData, @"^\d*\.\d*").Value),
+                        date = Regex.Match(timeData, @"\d{4}-.*?$").Value,
+
+                        position = GetVector(reader.ReadLine()),
+                        velocity = GetVector(reader.ReadLine())
+                    };
+                    reader.ReadLine();
+
+                    _states.Add(state);
+                }
+            }
+            states = _states.ToArray();
+        }
+
+        Vector3 GetVector(string line)
+        {
+            var vectorData = Regex.Matches(line, @"(?<=(=)|(= ))\S+");
+            return new Vector3
+            {
+                x = Double.Parse(vectorData[0].Value, NumberStyles.Float, CultureInfo.InvariantCulture),
+                y = Double.Parse(vectorData[1].Value, NumberStyles.Float, CultureInfo.InvariantCulture),
+                z = Double.Parse(vectorData[2].Value, NumberStyles.Float, CultureInfo.InvariantCulture)
+            };
         }
 
         string GetEPHEM(string i)
